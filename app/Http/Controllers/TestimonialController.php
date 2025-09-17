@@ -60,7 +60,7 @@ class TestimonialController extends Controller
      */
     public function edit(Testimonial $testimonial)
     {
-        //
+        return view('admin.testimonials.edit', compact('testimonial'));
     }
 
     /**
@@ -76,7 +76,7 @@ class TestimonialController extends Controller
      */
     public function destroy(Testimonial $testimonial)
     {
-        DB::transaction(function() use($testimonial){
+        DB::transaction(function () use ($testimonial) {
             $testimonial->delete();
         });
         return redirect()->route('admin.testimonials.index');

@@ -53,7 +53,7 @@ class OurPrincipleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OurPrinciple $ourPrinciple)
+    public function show(OurPrinciple $principle)
     {
         //
     }
@@ -61,15 +61,15 @@ class OurPrincipleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OurPrinciple $ourPrinciple)
+    public function edit(OurPrinciple $principle)
     {
-        //
+        return view('admin.principles.edit', compact('principle'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OurPrinciple $ourPrinciple)
+    public function update(Request $request, OurPrinciple $principle)
     {
         //
     }
@@ -79,7 +79,7 @@ class OurPrincipleController extends Controller
      */
     public function destroy(OurPrinciple $principle)
     {
-        DB::transaction(function() use($principle){
+        DB::transaction(function () use ($principle) {
             $principle->delete();
         });
         return redirect()->route('admin.principles.index');

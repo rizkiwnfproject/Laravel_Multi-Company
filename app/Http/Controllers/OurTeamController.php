@@ -48,7 +48,7 @@ class OurTeamController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OurTeam $ourTeam)
+    public function show(OurTeam $team)
     {
         //
     }
@@ -56,15 +56,15 @@ class OurTeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OurTeam $ourTeam)
+    public function edit(OurTeam $team)
     {
-        //
+        return view('admin.teams.edit', compact('team'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OurTeam $ourTeam)
+    public function update(Request $request, OurTeam $team)
     {
         //
     }

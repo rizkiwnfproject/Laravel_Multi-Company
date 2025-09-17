@@ -58,7 +58,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -74,7 +74,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        DB::transaction(function() use($product){
+        DB::transaction(function () use ($product) {
             $product->delete();
         });
         return redirect()->route('admin.products.index');
