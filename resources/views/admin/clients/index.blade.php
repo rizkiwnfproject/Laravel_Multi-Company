@@ -17,14 +17,14 @@
                 @forelse ($clients as $client)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src=" " alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                            <img src="{{ Storage::url($client->avatar) }}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
-                                <h3 class="text-indigo-950 text-xl font-bold">asdasd</h3>
+                                <h3 class="text-indigo-950 text-xl font-bold">{{$client->name}}</h3>
                             </div>
                         </div>
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Occupation</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">qweqweewq</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$client->occupation}}</h3>
                         </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
                             <a href="{{ route('admin.clients.edit', $client) }}"

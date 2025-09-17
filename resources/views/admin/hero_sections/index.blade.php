@@ -17,14 +17,14 @@
                 @forelse ($hero_sections as $hero_section)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src="" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                            <img src="{{ Storage::url($hero_section->banner) }}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
-                                <h3 class="text-indigo-950 text-xl font-bold">qweqweqwe</h3>
+                                <h3 class="text-indigo-950 text-xl font-bold">{{$hero_section->heading}}</h3>
                             </div>
                         </div>
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Date</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">asdasd</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$hero_section->created_at}}</h3>
                         </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
                             <a href="{{ route('admin.hero_sections.edit', $hero_section) }}"

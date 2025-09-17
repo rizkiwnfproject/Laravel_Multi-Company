@@ -17,9 +17,9 @@
                 @forelse ($testimonials as $testimonial)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src=" " alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                            <img src="{{ Storage::url($testimonial->thumbnail) }}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
-                                <h3 class="text-indigo-950 text-xl font-bold">asdasdasd</h3>
+                                <h3 class="text-indigo-950 text-xl font-bold">{{$testimonial->message }}</h3>
                             </div>
                         </div>
                         <div class="hidden md:flex flex-col">

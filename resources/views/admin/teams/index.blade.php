@@ -16,14 +16,14 @@
                 @forelse ($teams as $team)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src="" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                            <img src="{{ Storage::url($team->avatar) }}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
-                                <h3 class="text-indigo-950 text-xl font-bold">asdasd</h3>
+                                <h3 class="text-indigo-950 text-xl font-bold">{{$team->name}}</h3>
                             </div>
                         </div>
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Location</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">qweqweqwe</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$team->location}}</h3>
                         </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
                             <a href="{{ route('admin.teams.edit', $team) }}"

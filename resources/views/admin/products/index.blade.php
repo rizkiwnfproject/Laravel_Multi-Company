@@ -17,14 +17,14 @@
                 @forelse ($products as $product)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src="" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                            <img src="{{ Storage::url($product->thumbnail) }}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
-                                <h3 class="text-indigo-950 text-xl font-bold">sadsadsadsa</h3>
+                                <h3 class="text-indigo-950 text-xl font-bold">{{$product->name}}</h3>
                             </div>
                         </div>
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Date</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">asdasdadd</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$product->created_at}}</h3>
                         </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
                             <a href="{{ route('admin.products.edit', $product) }}"

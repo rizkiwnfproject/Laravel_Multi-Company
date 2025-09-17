@@ -17,18 +17,19 @@
                 @forelse ($abouts as $about)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src=" " alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                            <img src="{{ Storage::url($about->thumbnail) }} " alt=""
+                                class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
-                                <h3 class="text-indigo-950 text-xl font-bold">sadsasadsad</h3>
+                                <h3 class="text-indigo-950 text-xl font-bold">{{$about->name}}</h3>
                             </div>
                         </div>
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Type</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">qweqweqweqe</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$about->type}}</h3>
                         </div>
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Date</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">ghghfghfgh</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$about->created_at}}</h3>
                         </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
                             <a href="{{ route('admin.abouts.edit', $about) }}"
